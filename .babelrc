@@ -1,0 +1,24 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+      }
+    }],
+    "stage-2"
+    // "@vue/babel-preset-jsx"
+  ],
+  "plugins": [
+    "transform-vue-jsx", "transform-runtime",
+    [
+      "prismjs",
+      {
+        "languages": ["html", "css", "javascript", "php", "dart", "bash", "nginx", "sql"],
+        "plugins": ["autolinker","line-numbers","copy-to-clipboard","highlight-keywords","jsonp-highlight","show-language","previewers","inline-color","toolbar","treeview"],
+        "theme": "tomorrow", // 依赖包中的主题
+        "css": true
+      }
+    ]
+  ]
+}
