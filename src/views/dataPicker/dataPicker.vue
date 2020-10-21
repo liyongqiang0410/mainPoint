@@ -77,6 +77,10 @@
         </el-form>
       </div>
     </div>
+    <div class="item">
+      <el-date-picker v-model="date.testValue" type="date" placeholder="选择日期" @change="testDateChange">
+      </el-date-picker>
+    </div>
   </div>
 </template>
 
@@ -86,6 +90,10 @@ export default {
   name: 'my-dataPicker',
   data() {
     return {
+      date: {
+        testValue: null,
+      },
+      testValue: null,
       selectedvalue: null,
       selectedvalue2: null,
       dateValue1: '',
@@ -310,7 +318,25 @@ export default {
     },
     cellStyle() {
       return 'text-align: center;padding: 5px 3px;'
-    }
+    },
+    dateFormater(d) {
+      let date = new Date(d);
+      let YYYY = date.getFullYear();
+      let MM = ("0" + (date.getMonth() + 1)).slice(-2);
+      let dd = ("0" + date.getDate()).slice(-2);
+
+      let HH = ("0" + date.getHours()).slice(-2);
+      let mm = ("0" + date.getMinutes()).slice(-2);
+      let ss = ('0' + date.getSeconds()).slice(-2);
+      return (YYYY + "-" + MM + "-" + dd + " " + HH + ":" + mm + ":" + ss);
+    },
+    testDateChange(date) {
+      console.log(date);
+      Object.keys(this.date).forEach(f => {
+        this.date[f] = this.dateFormater(date)
+      })
+      console.log(this.date);
+    },
   }
 }
 </script>

@@ -308,7 +308,19 @@ export default new Router({
                 icon: "filter",
                 permissions: ["admin", "user"]
               }
-            }
+            },
+            {
+              path: "filterFeturbulence",
+              name: "filterFeturbulence",
+              url: "svg/filterFeturbulence",
+              component: () => import("@/views/svg/filterFeturbulence.vue"),
+              meta: {
+                title: "Feturbulence",
+                customIcon: true,
+                icon: "filter",
+                permissions: ["admin", "user"]
+              }
+            },
           ]
         },
         {

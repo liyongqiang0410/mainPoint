@@ -13,6 +13,10 @@
         <div slot="tip" class="el-upload__tip">只能上传图片类型文件，且不超过30m</div>
       </el-upload>
     </div>
+    <div v-if="showImg">
+      <p>已上传图片</p>
+      <el-image style="width: 100px; height: 100px" v-for="src in imagePath" :src="'/api/' + src" :key="src" :fit="'contain'"></el-image>
+    </div>
   </div>
 </template>
 <script>
@@ -35,6 +39,8 @@ export default {
         name: 'files',
         fileData: ''
       },
+      imagePath: [],
+      showImg: false
     }
   },
   mounted() {
@@ -68,8 +74,10 @@ export default {
         contentType: false,
         processData: false,
         success: function (data) {
-          if(data.code === 100) {
-            that.$message.success(data.message)
+          if (data.code === 100) {
+            that.$message.success(data.message);
+            that.imagePath = data.path;
+            that.showImg = true;
           }
         },
         error: function (error) {

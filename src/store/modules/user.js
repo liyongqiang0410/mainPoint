@@ -5,7 +5,7 @@ export default {
   },
   mutations: {
     setuserInfo(state, value) {
-      if (value == '1') {
+      if (value == '15083863811') {
         state.userInfo = {
           name: "测试用户0",
           age: 20,
