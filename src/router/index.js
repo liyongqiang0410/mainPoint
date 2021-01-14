@@ -569,6 +569,28 @@ export default new Router({
               }
             },
           ]
+        }, {
+          path: 'vues',
+          name: 'vues',
+          component: () => import('@/views/vue/index'),
+          meta: {
+            title: 'vues',
+            icon: 'el-icon-menu',
+            permissions: ['admin', 'user']
+          },
+          children: [
+            {
+              path: "dialogTabs",
+              name: "dialogTabs",
+              url: "vues/dialogTabs",
+              component: () => import("@/views/vue/dialog_tabs/index"),
+              meta: {
+                title: "对话卡片",
+                icon: "el-icon-s-data",
+                permissions: ["admin", "user"]
+              }
+            }
+          ]
         }
       ]
     },
