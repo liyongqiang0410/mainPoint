@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-13 17:25:17
- * @LastEditTime: 2021-01-14 09:52:30
- * @LastEditors: your name
+ * @LastEditTime: 2021-01-14 14:07:21
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mainPoint\src\App.vue
 -->
@@ -32,7 +32,7 @@ a {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
   /* width: 70%;
   margin: auto; */
