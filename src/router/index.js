@@ -619,6 +619,16 @@ export default new Router({
                 icon: "el-icon-s-data",
                 permissions: ["admin", "user"]
               }
+            }, {
+              path: 'childComponentSplitting',
+              name: 'childComponentSplitting',
+              url: 'vues/childComponentSplitting',
+              component: () => import('@/views/vue/childComponentSplitting/index'),
+              meta: {
+                title: '优化3',
+                icon: "el-icon-s-data",
+                permissions: ["admin", "user"]
+              }
             }
           ]
         }
