@@ -629,6 +629,16 @@ export default new Router({
                 icon: "el-icon-s-data",
                 permissions: ["admin", "user"]
               }
+            }, {
+              path: 'defferredFeatures',
+              name: 'defferredFeatures',
+              url: 'vues/defferredFeatures',
+              component: () => import('@/views/vue/defferredFeatures/index'),
+              meta: {
+                title: '优化4',
+                icon: "el-icon-s-data",
+                permissions: ["admin", "user"]
+              }
             }
           ]
         }
