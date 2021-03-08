@@ -639,6 +639,16 @@ export default new Router({
                 icon: "el-icon-s-data",
                 permissions: ["admin", "user"]
               }
+            }, {
+              path: 'nonReactive',
+              name: 'nonReactive',
+              url: 'vues/nonReactive',
+              component: () => import('@/views/vue/nonReactive/index'),
+              meta: {
+                title: '优化5',
+                icon: "el-icon-s-data",
+                permissions: ["admin", "user"]
+              }
             }
           ]
         }
