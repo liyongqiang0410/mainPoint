@@ -1,6 +1,14 @@
 export default {
   state: {
-    userInfo: {},
+    userInfo: {
+      name: "测试用户0",
+      age: 20,
+      sex: "男",
+      id: "138-1438-9438",
+      nickName: "毅山霸",
+      role: "admin",
+      token: true
+    },
     userRoute: [],
   },
   mutations: {
@@ -15,7 +23,7 @@ export default {
           role: "admin",
           token: true
         };
-      } else { 
+      } else {
         state.userInfo = {
           name: "测试用户1",
           age: 18,
@@ -27,7 +35,7 @@ export default {
         };
       }
     },
-    setUserRoute(state, value) { 
+    setUserRoute(state, value) {
       state.userRoute = value
     }
   }

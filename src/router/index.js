@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "index",
-      directive: "index",
+      name: "app",
+      redirect: "/index",
       component: () => import("@/views/layout"),
       children: [
         {
@@ -394,12 +394,12 @@ export default new Router({
               }
             },
             {
-              path: "svg",
-              name: "svg",
-              url: "tips/svg",
+              path: "svgs",
+              name: "svgs",
+              url: "tips/svgs",
               component: () => import("@/views/tips/svg/index.vue"),
               meta: {
-                title: "svg",
+                title: "tip svg",
                 customIcon: true,
                 icon: "svg",
                 permissions: ["admin", "user"]
@@ -586,6 +586,36 @@ export default new Router({
               component: () => import("@/views/vue/dialog_tabs/index"),
               meta: {
                 title: "对话卡片",
+                icon: "el-icon-s-data",
+                permissions: ["admin", "user"]
+              }
+            }, {
+              path: 'vueOther',
+              name: 'vueOther',
+              url: 'vues/vueOther',
+              component: () => import('@/views/vue/other/index'),
+              meta: {
+                title: 'vue 其他',
+                icon: "el-icon-s-data",
+                permissions: ["admin", "user"]
+              }
+            }, {
+              path: 'functionComponents',
+              name: 'functionComponents',
+              url: 'vues/functionComponents',
+              component: () => import('@/views/vue/functionComponents/index'),
+              meta: {
+                title: '优化1',
+                icon: "el-icon-s-data",
+                permissions: ["admin", "user"]
+              }
+            }, {
+              path: 'localvariables',
+              name: 'localvariables',
+              url: 'vues/localvariables',
+              component: () => import('@/views/vue/localVariables/index'),
+              meta: {
+                title: '优化2',
                 icon: "el-icon-s-data",
                 permissions: ["admin", "user"]
               }
