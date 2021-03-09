@@ -426,6 +426,16 @@ export default new Router({
                 icon: "el-icon-edit",
                 permissions: ["admin"]
               }
+            }, {
+              path: 'throughText',
+              name: 'throughText',
+              url: 'tips/throughText',
+              component: () => import("@/views/tips/throughText/index.vue"),
+              meta: {
+                title: "文字穿透",
+                icon: "el-icon-edit",
+                permissions: ["admin"]
+              }
             }
           ]
         },
