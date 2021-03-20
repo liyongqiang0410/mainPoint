@@ -1,5 +1,13 @@
 <template>
-  <el-button :class="anim ? 'myButton active' : border ? 'myButton' : '' " :size="size" :type="type" :plain='plain' :round="round" :icon="icon" :circle='circle'>
+  <el-button
+    :class="anim ? 'myButton active' : border ? 'myButton' : ''"
+    :size="size"
+    :type="type"
+    :plain="plain"
+    :round="round"
+    :icon="icon"
+    :circle="circle"
+  >
     <slot></slot>
   </el-button>
 </template>
@@ -16,36 +24,34 @@ export default {
     },
     size: {
       type: String,
-      default: 'mini'
+      default: "mini",
     },
     border: {
       type: Boolean,
-      default: false
+      default: false,
     },
     plain: {
       type: Boolean,
-      default: false
+      default: false,
     },
     round: {
       type: Boolean,
-      default: false
+      default: false,
     },
     icon: {
       type: String,
-      default: ''
+      default: "",
     },
     circle: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
-    return {
-    }
+    return {};
   },
-  mounted() {
-  },
-}
+  mounted() {},
+};
 </script>
 <style lang="scss" scoped>
 $textColor: #303133;
@@ -78,7 +84,7 @@ $infoHo: rgb(233, 233, 235);
 }
 
 @function reLinearGradient($staticColor) {
-  $background-image:repeating-linear-gradient(
+  $background-image: repeating-linear-gradient(
       0deg,
       $staticColor,
       $staticColor $startPos,
@@ -110,7 +116,7 @@ $infoHo: rgb(233, 233, 235);
       transparent $endPos,
       $staticColor $endPos
     );
-  @return $background-image
+  @return $background-image;
 }
 .myButton[type="button"] {
   background-image: reLinearGradient($staticColor);
@@ -130,7 +136,7 @@ $infoHo: rgb(233, 233, 235);
 }
 .myButton.el-button--myPrimary[type="button"]:hover {
   background-image: reLinearGradient($primaryHo);
-   color: $textColor;
+  color: $textColor;
 }
 .myButton.el-button--mySuccess[type="button"] {
   background-image: reLinearGradient($success);
@@ -138,7 +144,7 @@ $infoHo: rgb(233, 233, 235);
 }
 .myButton.el-button--mySuccess[type="button"]:hover {
   background-image: reLinearGradient($successHo);
-   color: $textColor;
+  color: $textColor;
 }
 .myButton.el-button--myWarning[type="button"] {
   background-image: reLinearGradient($warning);
@@ -146,7 +152,7 @@ $infoHo: rgb(233, 233, 235);
 }
 .myButton.el-button--myWarning[type="button"]:hover {
   background-image: reLinearGradient($warningHo);
-   color: $textColor;
+  color: $textColor;
 }
 .myButton.el-button--myDanger[type="button"] {
   background-image: reLinearGradient($danger);
@@ -154,7 +160,7 @@ $infoHo: rgb(233, 233, 235);
 }
 .myButton.el-button--myDanger[type="button"]:hover {
   background-image: reLinearGradient($dangerHo);
-   color: $textColor;
+  color: $textColor;
 }
 .myButton.el-button--myInfo[type="button"] {
   background-image: reLinearGradient($info);
@@ -260,7 +266,6 @@ $infoHo: rgb(233, 233, 235);
   color: $textColor;
   background-size: $bgSize;
 }
-
 
 @function changeBackground($color) {
   $background: linear-gradient(to left, $color, $color) left top no-repeat,

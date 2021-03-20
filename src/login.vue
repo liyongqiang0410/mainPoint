@@ -42,9 +42,10 @@ export default {
       return;
       login({ Uname: this.id })
         .then((res) => {
+          // console.log(res.data);
           if (res.data.code === 100) {
             this.$message.success("登陆成功");
-            this.$store.commit("setuserInfo", this.id);
+            this.$store.commit("user/setuserInfo", this.id);
             this.$router.push({ path: "/index" });
           } else {
             this.$message.error(res.data.message);
