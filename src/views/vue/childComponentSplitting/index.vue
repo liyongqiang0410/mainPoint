@@ -30,4 +30,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$blue: "blue";
 </style>

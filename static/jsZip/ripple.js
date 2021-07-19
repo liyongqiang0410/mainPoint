@@ -1,4 +1,4 @@
-var dataDisplacementImg = (function() {
+var dataDisplacementImg = (function () {
   var t = document.createElement("canvas");
   if (!t.getContext) {
     return;
@@ -11,7 +11,7 @@ var dataDisplacementImg = (function() {
   var o = i - n;
   t.width = r;
   t.height = a;
-  var l = function(t, r, a, o) {
+  var l = function (t, r, a, o) {
     var l = (2 * Math.PI) / o.length;
     var f = 0;
     var s = null;
@@ -75,25 +75,25 @@ if (!window.Tween) {
   Tween = {};
 }
 if (!Tween.Linear) {
-  Tween.Linear = function(t, e, r, a) {
+  Tween.Linear = function (t, e, r, a) {
     return (r * t) / a + e;
   };
 }
 if (!Math.animation) {
-  Math.animation = function(t, e, r, a, i) {
-    var n = function(t) {
+  Math.animation = function (t, e, r, a, i) {
+    var n = function (t) {
       return typeof t == "undefined";
     };
-    var o = function(t) {
+    var o = function (t) {
       return typeof t == "function";
     };
-    var l = function(t) {
+    var l = function (t) {
       return typeof t == "number";
     };
-    var f = function(t) {
+    var f = function (t) {
       return typeof t == "string";
     };
-    var s = function(t) {
+    var s = function (t) {
       if (l(t)) {
         return t;
       } else if (f(t)) {
@@ -109,8 +109,8 @@ if (!Math.animation) {
       return -1;
     };
     var c = window.Tween;
-    var u = { duration: 300, easing: "Linear", callback: function() {} };
-    var d = function(t) {
+    var u = { duration: 300, easing: "Linear", callback: function () { } };
+    var d = function (t) {
       if (o(t)) {
         u.callback = t;
       } else if (s(t) != -1) {
@@ -123,7 +123,7 @@ if (!Math.animation) {
     d(a);
     d(i);
     if (!window.requestAnimationFrame) {
-      requestAnimationFrame = function(t) {
+      requestAnimationFrame = function (t) {
         return setTimeout(t, 17);
       };
     }
@@ -138,7 +138,7 @@ if (!Math.animation) {
     } else if (h.length == 2) {
       m = c[h[0]] && c[h[0]][h[1]];
     }
-    var b = function() {
+    var b = function () {
       var r = m(p, t, e - t, g);
       p++;
       if (p <= g) {
@@ -149,13 +149,13 @@ if (!Math.animation) {
       }
     };
     b();
-    return function() {
+    return function () {
       return v;
     };
   };
 }
 var E_ONLY = null;
-var rippleEffect = function(t) {
+var rippleEffect = function (t) {
   if (!t || !history.pushState) {
     return;
   }
@@ -165,7 +165,7 @@ var rippleEffect = function(t) {
     return;
   }
   if (typeof t == "string") {
-    [].slice.call(document.querySelectorAll(t)).forEach(function(t) {
+    [].slice.call(document.querySelectorAll(t)).forEach(function (t) {
       rippleEffect(t);
     });
     return;
@@ -176,17 +176,17 @@ var rippleEffect = function(t) {
     document.body.insertAdjacentHTML(
       "afterbegin",
       '<svg style="position:absolute;height:0;clip:rect(0 0 0 0);"><defs><filter id="' +
-        r +
-        '"><feImage xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' +
-        dataDisplacementImg +
-        '" x="0" y="0" width="512" height="512" result="ripple"></feImage><feDisplacementMap xChannelSelector="G" yChannelSelector="R" color-interpolation-filters="sRGB" in="SourceGraphic" in2="ripple" scale="0"></feDisplacementMap><feComposite operator="in" in2="ripple"></feComposite><feComposite in2="SourceGraphic"></feComposite></filter></defs></svg>'
+      r +
+      '"><feImage xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' +
+      dataDisplacementImg +
+      '" x="0" y="0" width="512" height="512" result="ripple"></feImage><feDisplacementMap xChannelSelector="G" yChannelSelector="R" color-interpolation-filters="sRGB" in="SourceGraphic" in2="ripple" scale="0"></feDisplacementMap><feComposite operator="in" in2="ripple"></feComposite><feComposite in2="SourceGraphic"></feComposite></filter></defs></svg>'
     );
   }
   var i = document.querySelector("#" + r + " feImage");
   var n = document.querySelector("#" + r + " feDisplacementMap");
   var o = null;
   var l = null;
-  t.addEventListener("click", function(e) {
+  t.addEventListener("click", function (e) {
     if (o) {
       cancelAnimationFrame(o());
     }
@@ -214,10 +214,10 @@ var rippleEffect = function(t) {
     var m = (30 * h) / 512;
     var b = (2e3 * h) / 512,
       w = (2100 * h) / 512;
-    l = Math.animation(m, 0, b, function(t) {
+    l = Math.animation(m, 0, b, function (t) {
       n.setAttribute("scale", t);
     });
-    o = Math.animation(0, h, w, function(e, r) {
+    o = Math.animation(0, h, w, function (e, r) {
       i.setAttribute("x", g - e / 2);
       i.setAttribute("y", v - e / 2);
       i.setAttribute("width", e);
@@ -235,4 +235,4 @@ if (
 ) {
   window.parent.location = "http://www.zhangxinxu.com/wordpress/?p=6626";
 }
-export {dataDisplacementImg}
+export { dataDisplacementImg }

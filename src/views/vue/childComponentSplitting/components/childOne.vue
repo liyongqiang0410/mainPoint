@@ -1,6 +1,8 @@
 <template>
-  <div>
-    {{timeConsumingTask()}}
+  <div class="childOne">
+    <div class="timeConsumingTask">
+      {{ timeConsumingTask() }}
+    </div>
   </div>
 </template>
 
@@ -59,4 +61,11 @@ Vue的更新粒度
 原文链接：https://blog.csdn.net/WU5229485/article/details/106658465
 */
 <style scoped lang="scss">
+$blue: #0000ff;
+
+.childOne {
+  .timeConsumingTask {
+    color: $blue;
+  }
+}
 </style>

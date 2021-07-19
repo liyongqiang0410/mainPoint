@@ -449,17 +449,17 @@ export default new Router({
             permissions: ["admin", "user"]
           },
           children: [
-            // {
-            //   path: "imgWatermark",
-            //   name: "imgWatermark",
-            //   url: 'mix/imgWatermark',
-            //   component: () => import('@/views/mix/imgWatermark.vue'),
-            //   meta: {
-            //     title: "图片水印",
-            //     icon: "el-icon-picture",
-            //     permissions: ["admin", "user"]
-            //   }
-            // },
+            {
+              path: "imgWatermark",
+              name: "imgWatermark",
+              url: 'mix/imgWatermark',
+              component: () => import('@/views/mix/imgWatermark.vue'),
+              meta: {
+                title: "图片水印",
+                icon: "el-icon-picture",
+                permissions: ["admin", "user"]
+              }
+            },
             {
               path: "waterMarkCom",
               name: "waterMarkCom",
@@ -656,6 +656,16 @@ export default new Router({
               component: () => import('@/views/vue/nonReactive/index'),
               meta: {
                 title: '优化5',
+                icon: "el-icon-s-data",
+                permissions: ["admin", "user"]
+              }
+            }, {
+              path: 'form',
+              name: 'form',
+              url: 'vues/form',
+              component: () => import('@/views/vue/form/index'),
+              meta: {
+                title: 'form',
                 icon: "el-icon-s-data",
                 permissions: ["admin", "user"]
               }
